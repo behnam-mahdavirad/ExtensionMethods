@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ExtensionMethods.Models;
 
 namespace ExtensionMethods.Controllers
 {
@@ -12,7 +13,18 @@ namespace ExtensionMethods.Controllers
         public ActionResult Index()
         {
             return View();
-        } // end ActionResult Index
+        } // end ActionResult Index GET
+
+        [HttpPost]
+        public ActionResult Index(ExtensionMethodModel MyExt)
+        {
+            string InputText = MyExt.MyText;
+            if (InputText.IsInteger())
+                return Content("<h1>Is Integer!</h1>");
+            else
+                return Content("<h1>Is Not Integer!<h1>");
+
+        } // end ActionResult Index POST
 
     } // end public class HomeController
 

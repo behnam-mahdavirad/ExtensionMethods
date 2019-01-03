@@ -1,0 +1,20 @@
+﻿@model ExtensionMethods.Models.ExtensionMethodModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Extension Methods</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Index", "Home"))
+        {
+            <div>Enter a string to Check if is Integer:</div>
+            @Html.TextBoxFor(m => m.MyText)
+            <input type="submit" value="Submit Data" id="btnSubmit" />
+        }
+    </div>
+</body>
+</html>
