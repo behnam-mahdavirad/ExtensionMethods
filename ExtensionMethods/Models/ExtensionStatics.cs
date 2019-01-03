@@ -13,6 +13,11 @@ namespace ExtensionMethods.Models
             return Int32.TryParse(str, out output);
         } // end method IsNumeric
 
+        public static int CountWords(this string str)
+        {
+            return str.Split(new char[] { ' ', '.', ',' }).Length;
+        } // end method CountWords
+
     } // end class ExtensionStatics
 
 } // end namespace ExtensionMethods.Models

@@ -13,6 +13,15 @@
         {
             <div>Enter a string to Check if is Integer:</div>
             @Html.TextBoxFor(m => m.MyText)
+            @Html.HiddenFor(m => m.SelectedOption, new { @Value = "1" })
+            <input type="submit" value="Submit Data" id="btnSubmit" />
+        }
+
+        @using (Html.BeginForm("Index", "Home"))
+        {
+            <div>Enter a string to count words:</div>
+            @Html.TextBoxFor(m => m.MyText)
+            @Html.HiddenFor(m => m.SelectedOption, new { @Value = "2" })
             <input type="submit" value="Submit Data" id="btnSubmit" />
         }
     </div>
